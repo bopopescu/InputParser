@@ -24,8 +24,8 @@ def runQC(job, cwl_file, cwl_filename, yml_file, yml_filename, outputs_dir, outp
 
 
 if __name__ == "__main__":
-    #options = Job.Runner.getDefaultOptions("./toilWorkflowRun")
-    options = Job.Runner.getDefaultOptions("./cc-run-example-command.sh")
+    options = Job.Runner.getDefaultOptions("./toilWorkflowRun")
+    #options = Job.Runner.getDefaultOptions("./cc-run-example-command.sh")
     options.logLevel = "INFO"
     options.clean = "always"
     with Toil(options) as toil:
