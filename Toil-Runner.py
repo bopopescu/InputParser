@@ -31,13 +31,13 @@ if __name__ == "__main__":
     with Toil(options) as toil:
 
         # specify the folder where the cwl and yml files live
-        inputs_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cwlExampleFiles")
+        inputs_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cwl")
         # specify where you wish the outputs to be written
-        outputs_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cwlExampleFiles")
+        outputs_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cwl")
 
         job0 = Job.wrapJobFn(initialize_jobs)
 
-        cwl_filename = "./cwl/blast-cc-flow.cwl"
+        cwl_filename = "blast-cc-flow.cwl"
         cwl_file = toil.importFile("file://" + os.path.abspath(os.path.join(inputs_dir, cwl_filename)))
 
         # add list of yml config inputs here or import and construct from file
